@@ -22,7 +22,7 @@ resource "google_service_account" "mysa" {
 
 resource "google_project_iam_binding" "mysabinding" {
   project = "${var.projectId}"
-  role    = "roles/editor"
+  role    = "roles/viewer"
 
   members = [
     "serviceAccount:${google_service_account.mysa.account_id}@${var.projectId}.iam.gserviceaccount.com"
